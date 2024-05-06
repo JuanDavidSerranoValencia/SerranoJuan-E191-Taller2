@@ -1,0 +1,15 @@
+
+.custom-header {
+    --background: #f44336;
+    --color: #fff;
+  }
+  
+  .custom-header ion-title {
+    text-align: center;
+    transition: border 0.3s ease;
+  }
+  
+  .custom-header ion-title:hover {
+    border-bottom: 2px solid #f44336;
+  }
+  

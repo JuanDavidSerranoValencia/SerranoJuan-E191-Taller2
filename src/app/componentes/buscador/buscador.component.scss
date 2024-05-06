@@ -1,0 +1,23 @@
+ion-searchbar {
+    --background: #fff;
+    --placeholder-color: #999;
+    --border-color: #ddd;
+    --border-radius: 10px;
+    --border-width: 1px;
+    --padding-start: 10px;
+    --padding-end: 10px;
+    --height: 40px;
+    --icon-color: #666;
+    --icon-width: 24px;
+    --icon-height: 24px;
+    --searchbar-icon-color: #666;
+}
+
+ion-searchbar input {
+    font-size: 16px;
+    color: #333;
+}
+
+ion-searchbar ::placeholder {
+    color: #999;
+}

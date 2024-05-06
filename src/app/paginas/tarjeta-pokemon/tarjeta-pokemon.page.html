@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pokemon: {{pokemon ? capitalize(pokemon.name) : ""}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="pokemon-details">
+  <div class="pokemon-container">
+    <ion-card *ngIf="pokemon" class="pokemon-card">
+      <ion-card-header>
+        <ion-card-title class="pokemon-name">{{capitalize(pokemon.name)}}</ion-card-title>
+      </ion-card-header>
+      <ion-img *ngIf="pokemon.sprites.front_default" [src]="pokemon.sprites.front_default" alt="front_default" class="pokemon-image"></ion-img>
+      <ion-card-content>
+        <ion-card-subtitle>Estadisticas</ion-card-subtitle>
+        <ion-list>
+          <ion-item *ngFor="let stat of pokemon.stats" class="pokemon-stat">
+            <ion-chip color="primary">{{ stat.stat.name.toUpperCase() }}</ion-chip>
+            <ion-label class="pokemon-stat-value">{{ stat.base_stat }}</ion-label>
+          </ion-item>
+        </ion-list>
+
+        <ion-item class="pokemon-type">
+          <ion-label>
+            <p>Tipo</p>
+          </ion-label>
+          <ion-chip color="success" *ngFor="let type of pokemon.types">{{type.type.name}}</ion-chip>
+        </ion-item>
+
+        <ion-card-subtitle class="pokemon-moves-title">Movimientos</ion-card-subtitle>
+        <ion-list>
+          <ion-item *ngFor="let move of pokemon.moves.slice(0, 3)" class="pokemon-move">
+            <ion-label class="pokemon-move-name">{{ capitalize(move.move.name) }}</ion-label>
+          </ion-item>
+        </ion-list>
+
+        <ion-card-subtitle class="pokemon-sprites-title">Sprites</ion-card-subtitle>
+        <ion-list>
+          <ion-item class="pokemon-sprite">
+            <ion-img *ngIf="pokemon.sprites.front_default" [src]="pokemon.sprites.front_default" alt="front_default"></ion-img>
+            <ion-img *ngIf="pokemon.sprites.back_default" [src]="pokemon.sprites.back_default" alt="back_default"></ion-img>
+            <ion-img *ngIf="pokemon.sprites.front_female"  [src]="pokemon.sprites.front_female" alt="front_female"></ion-img>
+            <ion-img *ngIf="pokemon.sprites.back_female" [src]="pokemon.sprites.back_female" alt="back_female"></ion-img>
+            <ion-img *ngIf="pokemon.sprites.front_shiny" [src]="pokemon.sprites.front_shiny" alt="front_shiny"></ion-img>
+            <ion-img *ngIf="pokemon.sprites.back_shiny" [src]="pokemon.sprites.back_shiny" alt="back_shiny"></ion-img>
+            <ion-img *ngIf="pokemon.sprites.front_shiny_female" [src]="pokemon.sprites.front_shiny_female" alt="front_shiny_female"></ion-img>
+            <ion-img *ngIf="pokemon.sprites.back_shiny_female" [src]="pokemon.sprites.back_shiny_female" alt="back_shiny_female"></ion-img>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

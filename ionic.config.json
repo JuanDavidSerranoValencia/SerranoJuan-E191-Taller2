@@ -1,0 +1,7 @@
+{
+  "name": "SerranoJuan-E191-Taller2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,22 @@
+
+ion-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  app-buscador {
+    margin-bottom: 20px;
+  }
+  
+  app-list-item-pokemon {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  app-footer {
+    margin-top: 20px;
+  }
+  
